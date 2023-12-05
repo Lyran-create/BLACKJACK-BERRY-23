@@ -1,5 +1,27 @@
 # BLACKJACK-BERRY-23
 BlackJack Final Project
+import java.util.Scanner;
+
+public class BlackjackGame {
+    private Deck deck;
+    private Player player;
+    private Dealer dealer;
+    private boolean playerTurn;
+    private String gameOutcome;
+
+    public BlackjackGame() {
+        this.deck = new Deck();
+        this.player = new Player("Player", 1000);
+        this.dealer = new Dealer();
+        this.playerTurn = true;
+        this.gameOutcome = "";
+    }
+
+    public void startGame() {
+        System.out.println("Welcome to Blackjack!");
+
+        while (player.bankroll > 0) {
+            resetGame();
 
             // Place bets
             int bet = getValidBet();
